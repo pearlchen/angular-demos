@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>AngularJS expressions demo</title>
+    <meta charset="utf-8">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+  </head>
+  <body ng-app>
+
+    <h1>AngularJS Template Expressions</h1>
+    
+    <a href="directives.html">directive bindings &raquo;</a>
+
+    <!-- Note: Using ng-init within template for quick demo. -->
+    <!-- In a real app, put your values in your controller! -->
+    
+    <table>
+      <tr>
+        <th>HTML Code</th>
+        <th>Output</th>
+      </tr>
+      <tr>
+        <td ng-non-bindable>{{firstString}}</td>
+        <td ng-init="firstString = 'Hello'" >{{firstString}}</td>
+      </tr>
+      <tr>
+        <td ng-non-bindable>{{secondString}}</td>
+        <td ng-init="secondString = 'Pearl'">{{secondString}}</td>
+      </tr>
+      <tr>
+        <td ng-non-bindable>{{firstString + secondString}}</td>
+        <td>{{firstString + secondString}}</td>
+      </tr>
+      <tr>
+        <td ng-non-bindable>{{firstNumber}}</td>
+        <td ng-init="firstNumber = 5">{{firstNumber}}</td>
+      </tr>
+      <tr>
+        <td ng-non-bindable>{{secondNumber}}</td>
+        <td ng-init="secondNumber = 3">{{secondNumber}}</td>
+      </tr>
+      <tr>
+        <td ng-non-bindable>{{firstNumber + secondNumber}}</td>
+        <td>{{firstNumber + secondNumber}}</td>
+      </tr>
+      <tr>
+        <td ng-non-bindable>{{myBoolean}}</td>
+        <td ng-init="myBoolean = true">{{myBoolean}}</td>
+      </tr>
+      <tr>
+        <td ng-non-bindable>{{nullValue}}</td>
+        <td ng-init="nullValue">{{nullValue}}</td>
+      </tr>
+    </table>
+    
+    <script src="../angular-1.3.0-beta.2/angular.js"></script>
+  </body>
+</html>

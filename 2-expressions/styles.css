@@ -1,0 +1,32 @@
+body { 
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+th, 
+td {
+  text-align: left;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+}
+th {
+  background-color: #eee;
+}
+pre, 
+td:first-child {
+  font-family: 'Consolas', 'Courier', monospace;
+}
+h1{
+  margin-bottom: 0.2em;
+}
+a {
+  display: inline-block;
+  margin-bottom: 1.5em;
+  color: #999;
+  text-decoration: none;
+}
+a:hover {
+  color: #666;
+}

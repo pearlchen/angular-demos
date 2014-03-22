@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>AngularJS expressions demo</title>
+    <meta charset="utf-8">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <style>
+      table {
+        min-width: 900px;
+        margin-bottom: 3em;
+      }
+      th:first-child {
+        width: 530px; /* keep hidden div from collapsing table */
+      }
+      .highlight {  
+        background-color: #fbeed5;
+      }
+    </style>
+  </head>
+  <body ng-app>
+    <div>
+
+      <h1>AngularJS Directive Bindings</h1>
+      
+      <a href="index.html">&laquo; template expressions</a>
+
+      <h2>Primitive values</h2>
+      <!-- Note: Using ng-init within template for quick demo. -->
+      <!-- In a real app, put your values in your controller! -->
+
+      <table>
+        <tr>
+          <th>HTML Code</th>
+          <th>Output</th>
+        </tr>
+        </tr>
+          <td ng-non-bindable>{{isHidden}}</td>
+          <td ng-init="isHidden = false">{{isHidden}}</td>
+        </tr>
+        </tr>
+          <td ng-non-bindable>
+            <pre>Hide? &lt;input type="checkbox" ng-model="isHidden"&gt;</pre>
+          </td>
+          <td>
+            Hide? <input type="checkbox" ng-model="isHidden">
+          </td>
+        </tr>
+        </tr>
+          <td ng-non-bindable>
+<pre>&lt;div ng-hide="isHidden"&gt;
+  This div is hidden if isHidden is true.
+&lt;/div&gt;</pre>
+          </td>
+          <td>
+            <div ng-hide="isHidden">
+              This div is hidden if isHidden is true.
+            </div>
+          </td>
+        </tr>
+      </td>
+    </table>
+
+    <h2>Object literals</h2>
+    <table>
+        <tr>
+          <th>HTML Code</th>
+          <th>Output</th>
+        </tr>
+        </tr>
+          <td ng-non-bindable>{{isHighlighted}}</td>
+          <td ng-init="isHighlighted = true">{{isHighlighted}}</td>
+        </tr>
+        </tr>
+          <td ng-non-bindable>
+<pre>Highlight? &lt;input type="checkbox" ng-model="isHighlighted"&gt;</pre>
+          </td>
+          <td>
+            Highlight? <input type="checkbox" ng-model="isHighlighted">
+          </td>
+        </tr>
+        </tr>
+          <td ng-non-bindable>
+<pre>&lt;div ng-class="{'highlight': isHighlighted}"&gt;
+  .highlight class added if isHighlighted is true.
+&lt;/div&gt;</pre>
+          </td>
+          <td>
+            <div ng-class="{'highlight': isHighlighted}">
+              .highlight class added if isHighlighted is true.
+            </div>
+          </td>
+        </tr>
+
+      </table>
+      
+    </div>
+    
+    <script src="../angular-1.3.0-beta.2/angular.js"></script>
+  </body>
+</html>
