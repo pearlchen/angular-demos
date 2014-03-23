@@ -3,9 +3,32 @@ body {
   padding-top: 5em; 
   font-size: 2em; 
 }
+fieldset {
+  border: none;
+}
 label {
   font-size: 0.6em;
 }
 input {
   font-size: 0.5em;
+}
+a {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 0.5em;
+  display: inline-block;
+  color: #999;
+  text-decoration: none;
+}
+a:hover {
+  color: #666;
+}
+.box {
+  width: 500px;
+  margin: 0 auto;
+  padding: 30px 100px;
+}
+.highlight {  
+  background-color: #fbeed5;
 }

@@ -8,14 +8,18 @@
   <body ng-app>
     <div ng-controller="nameCtrl">
 
-      <label>What’s your name?</label>
+      <fieldset>
 
-      <!-- Hardcoding the value of yourName as a "fake" example of 1-way binding -->
-      <input ng-init="yourName = 'Pearl'" type="text" value="{{yourName}}">
-      
-      <!-- The Angular-way of taking advantage of 2-way binding -->
-      <!-- <input type="text" ng-model="yourName"> -->
-      
+        <label>What’s your name?</label>
+
+        <!-- Hardcoding the value of yourName as a "fake" example of 1-way binding -->
+        <input ng-init="yourName = 'Pearl'" type="text" value="{{yourName}}">
+        
+        <!-- The Angular-way of taking advantage of 2-way binding -->
+        <!-- <input type="text" ng-model="yourName"> -->
+
+      </fieldset>
+
       <h1>Hello {{yourName}}!</h1>
 
       <!-- Angular uses the model as the single source of truth!  -->
@@ -27,6 +31,9 @@
       --> 
 
     </div>
+    
+    <a href="counter.html">another example &raquo;</a>
+
     <script src="../angular-1.3.0-beta.2/angular.js"></script>
     <script>
     function nameCtrl($scope) {
