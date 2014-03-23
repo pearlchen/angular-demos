@@ -1,0 +1,11 @@
+body { 
+  text-align: center; 
+  padding-top: 5em; 
+  font-size: 2em; 
+}
+label {
+  font-size: 0.6em;
+}
+input {
+  font-size: 0.5em;
+}
