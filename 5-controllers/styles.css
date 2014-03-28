@@ -2,6 +2,11 @@ body {
   padding: 2em;
   text-align: center;
 }
+.jumbotron {
+  -webkit-transition: background-color 500ms ease-out; 
+  -moz-transition: background-color 500ms ease-out;
+  -o-transition: background-color 500ms ease-out;
+}
 .jumbotron .number {
   display: block;
   min-height: 120px;
