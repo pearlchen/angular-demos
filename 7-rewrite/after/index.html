@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>XHR Async Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../bootstrap-3.1.1/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body ng-app>
+
+    <div class="demo" ng-controller="MailCtrl">
+
+      <div class="logo">
+        NOT <img src="gmail_icon_small.png" width="20" height="14" alt="Gmail icon">
+      </div>
+
+      <div class="letter">
+        <p>Dear cousin,<p>
+        <p>I am your long lost relative. I am trying to find my way home.</p>
+        <p>Please send money!</p>
+        <button type="submit" class="btn btn-default btn-success" ng-disabled="isSending" ng-click="submitHandler()">
+          Send 
+          <span class="glyphicon glyphicon-repeat rotating" ng-show="isSending"></span>
+        </button>
+      </div>
+
+      <div class="alert alert-warning" ng-show="isRetrying">
+        <span class="message">
+          <strong>Trouble connecting...</strong> 
+          Re-trying... Attempt #{{timesSubmitted}}
+        </span>
+      </div>
+
+      <div class="alert alert-danger" ng-show="isFailed">
+        <button type="button" class="close" ng-click="dismissAlert()">&times;</button>
+        <span class="message">
+          <strong>Oh no!</strong> 
+          We were unable to submit your info. Try again later?
+        </span>
+      </div>
+
+    </div>
+
+    <script src="../../jquery-2.1.0/jquery.min.js"></script>
+    <script src="../../angular-1.3.0-beta.2/angular.min.js"></script>
+    <script src="scripts.js"></script>
+
+  </body>
+</html>
