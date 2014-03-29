@@ -69,15 +69,22 @@
 		- Delete `waitAnimation = submitButton.find('.glyphicon');`
 
 10. Update setTimeout to use Angular $timeout (otherwise will cause scope issues)
-	- Replace all instance of `submitData` to be `$scope.submitData`
-	- Update `MailCtrl($scope)` to be `MailCtrl($scope, $timeout)`
-	- Replace `setTimeout( submitData, 1000 );` with `$timeout( $scope.submitData, 1000 );`
+	-	In **scripts.js**: 
+		- Replace all instance of `submitData` to be `$scope.submitData`
+		- Update `MailCtrl($scope)` to be `MailCtrl($scope, $timeout)`
+		- Replace `setTimeout( submitData, 1000 );` with `$timeout( $scope.submitData, 1000 );`
 
 11. Update jQuery $.post() to use Angular $http.post() (otherwise will cause scope issues)
-	- Replace all instance of `postOnSuccess` to be `$scope.postOnSuccess`
-	- Replace all instance of `postOnFail` to be `$scope.postOnFail`
-	- Update `MailCtrl($scope, $timeout)` to be `MailCtrl($scope, $timeout, $http)`
-	- Replace `` with `$http.post("fakeapi").success($scope.postOnSuccess).error($scope.postOnFail);`
+	-	In **scripts.js**: 
+		- Replace all instance of `postOnSuccess` to be `$scope.postOnSuccess`
+		- Replace all instance of `postOnFail` to be `$scope.postOnFail`
+		- Update `MailCtrl($scope, $timeout)` to be `MailCtrl($scope, $timeout, $http)`
+		- Replace `` with `$http.post("fakeapi").success($scope.postOnSuccess).error($scope.postOnFail);`
 
 12.	(Optional) Turn maxTries into a $scope variable
-	⁃	Find all instances of `maxTries` and replace with `$scope.maxTries`
+	-	In **scripts.js**: 
+		⁃	Find all instances of `maxTries` and replace with `$scope.maxTries`
+
+13. Remove jQuery dependency!
+	- In **index.html**:
+		- Delete `<script src="../../jquery-2.1.0/jquery.min.js"></script>` 
