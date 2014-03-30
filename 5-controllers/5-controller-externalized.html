@@ -11,8 +11,7 @@
 
     <div class="container" ng-controller="CounterCtrl">
 
-      <div class="jumbotron"
-        ng-style="jumbotronStyle">
+      <div class="jumbotron" ng-style="jumbotronStyle">
         <p>
           <span class="number">{{counter}}</span>
           days since a bug was found
@@ -20,11 +19,12 @@
       </div>
 
       <div class="buttons">   
-        <button class="btn btn-default btn-success" 
-          ng-click="incrementCounter()">
-          No bugs found today! :)</button>
-        <button class="btn btn-default btn-danger"
-          ng-click="resetCounter()">A bug was found :(</button>
+        <button class="btn btn-default btn-success" ng-click="incrementCounter()">
+          No bugs found today! :)
+        </button>
+        <button class="btn btn-default btn-danger" ng-click="resetCounter()">
+          A bug was found :(
+        </button>
       </div>
 
     </div>

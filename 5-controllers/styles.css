@@ -26,6 +26,6 @@ footer a {
   display: inline-block;
   padding: 0 20px;
 }
-footer a:nth-of-type(2) {
+footer a:not(:first-child) {
   border-left: 1px solid #ccc;
 }
