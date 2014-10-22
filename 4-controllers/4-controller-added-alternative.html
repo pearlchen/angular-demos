@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../bootstrap-3.1.1/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="../angular-1.3.0/angular.js"></script>
   </head>
-  <body ng-app>
+  <body ng-app="demoApp">
 
     <div class="container" ng-controller="CounterCtrl as ctrl">
 
       <div class="jumbotron" ng-style="ctrl.jumbotronStyle">
         <p>
-          <span class="number">{{ctrl.counter}}</span>
+          <span class="number ng-cloak">{{ctrl.counter}}</span>
           days since a bug was found
         </p>
       </div>
@@ -35,8 +36,11 @@
       <a href="5-controller-externalized.html">Next step: Externalize controller &raquo;</a>
     </footer>
 
-    <script src="../angular-1.3.0/angular.js"></script>
     <script>
+
+      angular.module('demoApp', [])
+        .controller('CounterCtrl', CounterCtrl);
+
       function CounterCtrl() {
 
         // replace all the ng-init and declare here instead
@@ -45,17 +49,18 @@
         this.happyColor = '92,184,92'; // a bright green
         this.jumbotronStyle = {'background-color': 'rgba('+this.happyColor+',0)'};
 
-        // replace all the ng-click's with method calls
-        this.incrementCounter = function() {
-          this.counter++; 
-          this.jumbotronStyle = {'background-color': 'rgba('+this.happyColor+','+this.counter/20+')'}
-        };
-        this.resetCounter = function(){
-          this.counter = 0;
-          this.jumbotronStyle = {'background-color': 'rgba('+this.happyColor+',0)'};
-        };
-
       }
+
+      // replace all the ng-click's with method calls
+      CounterCtrl.prototype.incrementCounter = function() {
+        this.counter++; 
+        this.jumbotronStyle = {'background-color': 'rgba('+this.happyColor+','+this.counter/20+')'}
+      };
+      CounterCtrl.prototype.resetCounter = function(){
+        this.counter = 0;
+        this.jumbotronStyle = {'background-color': 'rgba('+this.happyColor+',0)'};
+      };
+
     </script>
   </body>
 </html>

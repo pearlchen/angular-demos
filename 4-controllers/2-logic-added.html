@@ -6,23 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../bootstrap-3.1.1/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="../angular-1.3.0/angular.js"></script>
   </head>
   <body ng-app>
 
-    <div class="container" ng-controller="CounterCtrl">
+    <div class="container">
 
-      <div class="jumbotron" ng-style="jumbotronStyle">
+      <div class="jumbotron">
         <p>
-          <span class="number">{{counter}}</span>
+          <span class="number ng-cloak">{{counter}}</span>
           days since a bug was found
         </p>
       </div>
 
-      <div class="buttons">   
-        <button class="btn btn-default btn-success" ng-click="incrementCounter()">
+      <div class="buttons" ng-init="counter = 0">   
+        <button class="btn btn-default btn-success" ng-click="counter = counter + 1">
           No bugs found today! :)
         </button>
-        <button class="btn btn-default btn-danger" ng-click="resetCounter()">
+        <button class="btn btn-default btn-danger" ng-click="counter = 0">
           A bug was found :(
         </button>
       </div>
@@ -30,10 +31,9 @@
     </div>
 
     <footer>
-      <a href="4-controller-added.html">&laquo; Previous step</a>
+      <a href="index.html">&laquo; Previous step</a>
+      <a href="3-more-logic-added.html">Next step: Add more logic &raquo;</a>
     </footer>
 
-    <script src="../angular-1.3.0/angular.js"></script>
-    <script src="counter-ctrl.js"></script>
   </body>
 </html>

@@ -2,18 +2,19 @@
 
 1. Add AngularJS script
 	- In **index.html**:
-		- Add `<script src="../../angular-1.3.0-beta2/angular.min.js"></script>` 
+		- Add `<script src="../../angular-1.3.0/angular.min.js"></script>` 
 	- (Note: You can’t get rid of the jquery.js script just yet because '$ not found' errors will stop Angular from working.)
 
 2. Bootstrap app using ng-app:
 	- In **index.html**:
-		- Update `<body>...</body>` to be `<body ng-app>...</body>`
+		- Update `<body>...</body>` to be `<body ng-app="demoApp">...</body>`
 
 3. Turn scripts.js into an Angular controller file:
 	- In **index.html**:
 		-	Update `<div class="demo">` to be `<div class="demo" ng-controller="MailCtrl">`
 	- In **scripts.js**:
 		-	Turn current `(function(){ ... }());` closure into `function MailCtrl($scope){  ... }`
+		- Add Angular app namespace and controller definitions as first line: angular.module('demoApp', []).controller('MailCtrl', ['$scope', MailCtrl]);
 
 4. Make alert message boxes model-driven:
 	- In **styles.css**:
@@ -72,6 +73,7 @@
 	-	In **scripts.js**: 
 		- Replace all instance of `submitData` to be `$scope.submitData`
 		- Update `MailCtrl($scope)` to be `MailCtrl($scope, $timeout)`
+		- Update `.controller('MailCtrl', ['$scope', MailCtrl]);` to be `.controller('MailCtrl', ['$scope', '$timeout', MailCtrl]);`
 		- Replace `setTimeout( submitData, 1000 );` with `$timeout( $scope.submitData, 1000 );`
 
 11. Update jQuery $.post() to use Angular $http.post() (otherwise will cause scope issues)
@@ -79,6 +81,7 @@
 		- Replace all instance of `postOnSuccess` to be `$scope.postOnSuccess`
 		- Replace all instance of `postOnFail` to be `$scope.postOnFail`
 		- Update `MailCtrl($scope, $timeout)` to be `MailCtrl($scope, $timeout, $http)`
+		- Update `.controller('MailCtrl', ['$scope', '$timeout', MailCtrl]);` to be `angular.module('demoApp', []).controller('MailCtrl', ['$scope', '$timeout', '$http', MailCtrl]);`
 		- Replace `` with `$http.post("fakeapi").success($scope.postOnSuccess).error($scope.postOnFail);`
 
 12.	(Optional) Turn maxTries into a $scope variable

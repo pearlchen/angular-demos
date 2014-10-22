@@ -1,3 +1,6 @@
+angular.module('demoApp', [])
+        .controller('CounterCtrl', ['$scope', CounterCtrl]);
+        
 function CounterCtrl($scope) {
 
   $scope.counter = 0;

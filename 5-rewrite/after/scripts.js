@@ -1,3 +1,6 @@
+angular.module('demoApp', [])
+        .controller('MailCtrl', ['$scope', '$timeout', '$http', MailCtrl]);
+
 function MailCtrl($scope, $timeout, $http) {
 
   $scope.timesSubmitted = 0;
